@@ -1,0 +1,23 @@
+# Abaikan file dan folder yang tidak perlu
+
+# Folder vendor (composer dependencies)
+vendor/
+
+# File konfigurasi lingkungan
+.env
+config/database.php
+
+# File log
+*.log
+
+# File cache dan temporary
+*.cache
+*.tmp
+
+# Folder dan file sistem editor
+.vscode/
+.idea/
+
+# File yang dibuat oleh sistem
+.DS_Store
+Thumbs.db
