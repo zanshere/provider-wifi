@@ -1,4 +1,4 @@
-name: ESLint Check
+name: ESLint
 
 on:
   push:
@@ -6,24 +6,27 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Set ESLint executable permission
+        run: chmod +x ./node_modules/.bin/eslint
+      
+      - name: Run ESLint
+        run: npx eslint .
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Set ESLint executable permission
-      run: chmod +x ./node_modules/.bin/eslint
-
-    - name: Run ESLint
-      run: npx eslint .
