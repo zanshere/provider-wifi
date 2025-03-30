@@ -1,4 +1,7 @@
 {
+    "name": "zanshere/provider-wifi",
+    "description": "Website yang diciptakan menggunakan php dan tailwindcss",
+    "license": "proprietary",
     "require": {
         "vlucas/phpdotenv": "^5.6"
     }
