@@ -2,6 +2,7 @@
 
 # Folder vendor (composer dependencies)
 vendor/
+linguist/
 
 # File konfigurasi lingkungan
 .env
